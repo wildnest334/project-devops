@@ -6,3 +6,5 @@ import boto3
 
 def iniciar_instancia():
     pass
+
+# Validación básica de parámetros
