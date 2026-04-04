@@ -8,3 +8,8 @@ def iniciar_instancia():
     pass
 
 # Validación básica de parámetros
+try:
+    pass
+except Exception as e:
+    print(e):
+    
