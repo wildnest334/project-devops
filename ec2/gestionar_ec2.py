@@ -89,5 +89,28 @@ def main():
             print(" Opción no válida, intenta de nuevo")
 
 
+import sys
+
 if __name__ == "__main__":
-    main()
+    # Si hay argumentos → modo automático
+    if len(sys.argv) > 1:
+        comando = sys.argv[1]
+
+        if comando == "listar":
+            listar_instancias()
+
+        elif comando == "iniciar" and len(sys.argv) == 3:
+            iniciar_instancia(sys.argv[2])
+
+        elif comando == "detener" and len(sys.argv) == 3:
+            detener_instancia(sys.argv[2])
+
+        elif comando == "terminar" and len(sys.argv) == 3:
+            terminar_instancia(sys.argv[2])
+
+        else:
+            print("Comando no válido")
+
+    # Si no hay argumentos → menú
+    else:
+        main()
