@@ -19,16 +19,14 @@ def listar_instancias():
         print(f" Error al listar instancias: {e}")
 
 
-def iniciar_instancia():
-    instance_id = input(" Ingresa el ID de la instancia a iniciar: ")
+def iniciar_instancia(instance_id):
     try:
         ec2.start_instances(InstanceIds=[instance_id])
-        print(f" Instancia {instance_id} iniciada")
+        print(f"Instancia {instance_id} iniciada")
     except Exception as e:
-        print(f" Error al iniciar: {e}")
+        print(f"Error al iniciar: {e}")
 
-
-def detener_instancia():
+def terminar_instancia():
     instance_id = input(" Ingresa el ID de la instancia a detener: ")
     try:
         ec2.stop_instances(InstanceIds=[instance_id])

@@ -27,3 +27,13 @@ Compresión completada: backup_2026-04-06_04-17-43.tar.gz
 Backup subido a S3: mi-bucket-devops-arielmtz/backup_2026-04-06_04-17-43.tar.gz
 Archivo local eliminado
 Proceso finalizado correctamente
+Iniciando respaldo...
+Compresión completada: backup_2026-04-06_04-32-42.tar.gz
+Backup subido a S3: mi-bucket-devops-arielmtz/backup_2026-04-06_04-32-42.tar.gz
+Archivo local eliminado
+Proceso finalizado correctamente
+Iniciando respaldo...
+Compresión completada: backup_2026-04-06_04-33-39.tar.gz
+Backup subido a S3: mi-bucket-devops-arielmtz/backup_2026-04-06_04-33-39.tar.gz
+Archivo local eliminado
+Proceso finalizado correctamente

@@ -1,3 +1,7 @@
+
+# Cargar configuración
+source config/config.env
+
 #!/bin/bash
 
 # Validación de parámetros
@@ -23,11 +27,20 @@ echo "Ejecutando gestión de EC2..." | tee -a $LOGS
 
 python3 ec2/gestionar_ec2.py $ACCION $INSTANCE_ID
 
-if [ $? -ne 0 ]; then
-    echo "Error en script EC2" | tee -a $LOGS
-    exit 1
+# Cargar configuración
+source config/config.env
+
+# Si no hay parámetros → usar config
+if [ "$#" -lt 1 ]; then
+    echo "Usando configuración desde config.env"
+    ACCION="listar"
+else
+    ACCION=$1
 fi
 
+INSTANCE_ID=${2:-$INSTANCE_ID}
+DIRECTORIO=${3:-$DIRECTORY}
+BUCKET=${4:-$BUCKET_NAME}
 echo "EC2 ejecutado correctamente" | tee -a $LOGS
 
 # 🔹 Ejecutar backup S3
