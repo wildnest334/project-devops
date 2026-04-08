@@ -22,7 +22,7 @@ mkdir -p logs
 
 echo "Iniciando proceso de despliegue..." | tee -a $LOGS
 
-# 🔹 Ejecutar script EC2 (Python)
+#  Ejecutar script EC2 (Python)
 echo "Ejecutando gestión de EC2..." | tee -a $LOGS
 
 python3 ec2/gestionar_ec2.py $ACCION $INSTANCE_ID
@@ -43,7 +43,7 @@ DIRECTORIO=${3:-$DIRECTORY}
 BUCKET=${4:-$BUCKET_NAME}
 echo "EC2 ejecutado correctamente" | tee -a $LOGS
 
-# 🔹 Ejecutar backup S3
+#  Ejecutar backup S3
 echo "Ejecutando backup en S3..." | tee -a $LOGS
 
 ./s3/backup_s3.sh $DIRECTORIO $BUCKET
